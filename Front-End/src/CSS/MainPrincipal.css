@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: flex;
+  justify-content: center;
+  height: 200%;
+  width: 100%;
+  transition: 0.5s;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgb(250, 160, 108);
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(50px);
+  background-color: #c3f02f30;
+  border: 3px solid rgba(255, 255, 255, 0.23);
+  border-radius: 30px;
+  padding: 3px;
+  box-shadow: 0 0 20px rgb(220, 100, 30);
+}
+
+img:hover {
+  transform: scale(1.2);
+  border-color: #646cff;
+}
+
+.formaciionMain,
+.idiomamain,
+.experienciamain,
+.skillmain,
+.proyectomain {
+  width: 100%;
+  height: auto;
+}
+.imagenCertificado{
+  width:100%;
+  height: 370px;
+}
+
+.imagenFormacion{
+  width:100%;
+  height: 370px;
+}
+.imagenSkill{
+  width:100%;
+  height: 370px;
+}
+.imagenExperiencia{
+  width:100%;
+  height: 370px;
+}
+.contenedormain {
+  margin-left: 0;
+  padding: 20px;
+}
+
+@media (min-width: 576px) {
+  .contenedormain {
+    margin-left: auto;
+  }
+}

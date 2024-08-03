@@ -1,0 +1,64 @@
+
+.CardE{
+    display: flex;
+    align-items: center;
+    /* backdrop-filter: blur(100px); */
+    background-color: #c3f02f30;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius:90px;
+    padding: 32px;
+    box-shadow: 0 0 20px rgb(220, 100, 30);
+}
+
+.contenedorexperiencia{
+    
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+ /* __________________________________________________________________________ */
+/* Crear experiencia */
+.crearexperiencia{
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 70%;
+    backdrop-filter: blur(10px);
+    background-color: #c3f02f30;
+    border: 3px solid rgba(255, 255, 255, 0.23);
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgb(220, 100, 30);
+}
+.botones{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+.iconcrearexperiencia{
+    font-size: 200%;
+    margin-right: 2%;
+}
+.btnexpcrea{ 
+     font-size: 200%;
+    margin-right: 2%;}
+ /* __________________________________________________________________________ */
+/* actualizar experiencia */
+.actualizarexperiencia{
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 70%;
+    backdrop-filter: blur(10px);
+    background-color: #c3f02f30;
+    border: 3px solid rgba(255, 255, 255, 0.23);
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgb(220, 100, 30);
+}
+.btnexpact{
+    font-size: 110%;
+    margin-right: 2%;
+}
+ /* __________________________________________________________________________ */

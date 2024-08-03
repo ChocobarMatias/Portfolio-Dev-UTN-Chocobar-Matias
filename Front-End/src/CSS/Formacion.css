@@ -1,0 +1,87 @@
+.CardF {
+    display: flex;
+    align-items: center;
+    /* backdrop-filter: blur(100px); */
+    background-color: #c3f02f30;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius:90px;
+    padding: 32px;
+    box-shadow: 0 0 20px rgb(220, 100, 30);
+    font-size: larger;
+}
+/* .formacion{
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+} */
+.contenedorFormacion{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.hr{
+    color:#ffff
+}
+
+/* __________________________________________________________________________ */
+/* crear formacion */
+.crearFormacion {
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 70%;
+    backdrop-filter: blur(10px);
+    background-color: #c3f02f30;
+    border: 4px solid rgba(255, 255, 255, 0.23);
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgb(220, 100, 30);
+}
+
+label {
+    display: inline-block;
+    width: auto; /* Ajuste para evitar desbordamiento */
+}
+
+.input {
+    font-size: 160%;
+}
+
+.btncrearfor {
+    font-size: 150%;
+    margin: 10px 0;
+}
+/* __________________________________________________________________________ */
+/* Editar Formacion */
+.actualizarFormacion{
+    /* display: flex; */
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-left: 33%;
+    margin-right: 25%;
+    backdrop-filter: blur(10px);
+    background-color: #c3f02f30;
+    border: 30px solid rgba(255, 255, 255, 0.23);
+    border-radius:30px;
+    padding: 2px;
+    box-shadow: 0 0 20px rgb(220, 100, 30);
+}
+label{
+    display: inline-block;
+    width: 160px;
+    
+}
+.boto2for{
+font-size: 200%;
+    margin-right: 5%;
+}
+.input{
+    font-size: 160%;
+}
+.btnactfor{
+    font-size: 200%;
+    margin-right: 5%;
+}
+/* __________________________________________________________________________ */
