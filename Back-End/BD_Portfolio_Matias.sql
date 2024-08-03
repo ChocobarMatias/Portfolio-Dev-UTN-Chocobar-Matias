@@ -65,7 +65,7 @@ CREATE TABLE Certificaciones (
     FotoCertificado VARCHAR(250)
 );
 
-select*from Certificaciones where id_Certificacion=1
+
 -- Tabla Skills
 CREATE TABLE Skills (
     id_Skill INT PRIMARY KEY AUTO_INCREMENT,
