@@ -18,7 +18,6 @@ const Certificacion = () => {
   // _______________________________________________________________________
   const token = useAuthStore((state) => state.token);
   const userRole = useAuthStore((state) => state.userRole);
-  const clearAuth = useAuthStore((state) => state.clearAuth);
  // _______________________________________________________________________
   const getCertificacion = async () => {
     try {
@@ -46,8 +45,6 @@ const Certificacion = () => {
 
   useEffect(() => { getCertificacion();}, []);
 
-  const handleLogout = () => { clearAuth(); };
-
   const totalPages = Math.ceil(certificados.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -55,6 +52,7 @@ const Certificacion = () => {
 
   return (
     <div>
+      <br />
       <h3 className="text-white">
         CERTIFICADOS: {token && userRole === "admin" && (
           <Link to={CREAR_CERTIFICADO}>
@@ -62,9 +60,6 @@ const Certificacion = () => {
           </Link>
         )}
       </h3>
-      <Button onClick={handleLogout} className="btn btn-secondary">
-        Cerrar Sesión
-      </Button>
       <hr />
 
       <div className="contenedorPagination">

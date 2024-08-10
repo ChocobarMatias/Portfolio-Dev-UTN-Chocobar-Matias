@@ -1,40 +1,44 @@
-.icon{
-    font-size: 200%;
-    margin-right: 2%;
+/* Iconos */
+.icon, .icon2, .iconcrearproyecto {
+    font-size: 2rem; /* 200% = 2rem */
+    margin-right: 0.5rem; /* Ajustado para mejor responsividad */
 }
-.icon2{
-    font-size: 200%;
-    margin-right: 2%;
+
+.icon3 {
+    font-size: 3.5rem; /* 350% = 3.5rem */
+    margin-right: 0.5rem; /* Ajustado para mejor responsividad */
 }
-.icon3{
-    font-size: 350%;
-    margin-right: 2%;
-}
-.cardproyecto{
+
+/* Card Proyecto */
+.cardproyecto {
     display: flex;
     align-items: center;
     flex-direction: column;
     backdrop-filter: blur(100px);
     background-color: #c3f02f30;
     border: 3px solid rgba(255, 255, 255, 0.5);
-    border-radius:90px;
-    padding: 42px;
-    box-shadow: 0 0 20px rgb(220, 100, 30);
+    border-radius: 1.5rem; /* 90px = 1.5rem */
+    padding: 2.625rem; /* 42px = 2.625rem */
+    box-shadow: 0 0 1.25rem rgb(220, 100, 30); /* 20px = 1.25rem */
+}
 
-}
-.botonesProyectos{
+/* Botones Proyectos */
+.botonesProyectos {
     display: flex; 
     justify-content: space-between; 
     align-items: center;
 }
-.contenedorProyecto{
+
+/* Contenedor Proyecto */
+.contenedorProyecto {
     display: flex; 
     justify-content: space-between; 
     flex-direction: column;
     align-items: center;
 }
-/* actualizar proyecto */
-.actualizarproyecto{
+
+/* Actualizar Proyecto */
+.actualizarproyecto, .contenedorcrear {
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
@@ -42,23 +46,52 @@
     backdrop-filter: blur(10px);
     background-color: #c3f02f30;
     border: 3px solid rgba(255, 255, 255, 0.23);
-    border-radius: 30px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgb(220, 100, 30);
+    border-radius: 1.875rem; /* 30px = 1.875rem */
+    padding: 1.25rem; /* 20px = 1.25rem */
+    box-shadow: 0 0 1.25rem rgb(220, 100, 30); /* 20px = 1.25rem */
 }
-.iconcrearproyecto{
-    font-size: 200%;
-    margin-right: 2%;
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .cardproyecto, .actualizarproyecto, .contenedorcrear {
+        max-width: 90%;
+        padding: 1rem; /* Ajustado para pantallas medianas */
+    }
+
+    .icon, .icon2, .iconcrearproyecto {
+        font-size: 1.75rem; /* Ajuste menor en pantallas medianas */
+    }
+
+    .icon3 {
+        font-size: 3rem; /* Ajuste menor en pantallas medianas */
+    }
 }
-.contenedorcrear{
-    justify-content: center;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: 70%;
-    backdrop-filter: blur(10px);
-    background-color: #c3f02f30;
-    border: 3px solid rgba(255, 255, 255, 0.23);
-    border-radius: 30px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgb(220, 100, 30);
+
+@media (max-width: 768px) {
+    .cardproyecto, .actualizarproyecto, .contenedorcrear {
+        max-width: 100%;
+        padding: 0.75rem; /* Ajustado para pantallas pequeñas */
+    }
+
+    .icon, .icon2, .iconcrearproyecto {
+        font-size: 1.5rem; /* Ajuste menor en pantallas pequeñas */
+    }
+
+    .icon3 {
+        font-size: 2.5rem; /* Ajuste menor en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .cardproyecto, .actualizarproyecto, .contenedorcrear {
+        padding: 0.5rem; /* Ajustado para pantallas muy pequeñas */
+    }
+
+    .icon, .icon2, .iconcrearproyecto {
+        font-size: 1.25rem; /* Ajuste menor en pantallas muy pequeñas */
+    }
+
+    .icon3 {
+        font-size: 2rem; /* Ajuste menor en pantallas muy pequeñas */
+    }
 }

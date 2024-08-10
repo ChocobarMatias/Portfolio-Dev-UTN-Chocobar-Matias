@@ -18,10 +18,10 @@ const Experiencia = () => {
   // _______________________________________________________________________
   const token = useAuthStore((state) => state.token);
   const userRole = useAuthStore((state) => state.userRole);
-  const clearAuth = useAuthStore((state) => state.clearAuth);
   // _______________________________________________________________________
 
   const getExperiencia = async () => {
+    
     let response = await axios.get(URL_EXPERIENCIAS);
     console.log(response.data);
     setExperiencias(response.data);
@@ -47,10 +47,6 @@ const Experiencia = () => {
   useEffect(() => {
     getExperiencia();
   }, []);
-// funcion para que si no es admin y no se genero token no muestre 
-  const handleLogout = () => {
-    clearAuth();
-  };
 
   return (
     <div>
@@ -60,9 +56,6 @@ const Experiencia = () => {
       <br /> {/*Ternario para mostrar el boton de crear solo cuando sea usuario admin*/}
       <h3 className="text-white"> Experiencia Laboral :{token && userRole === "admin" && (<Link to={CREAR_EXPERIENCIA}>
             <IoMdAddCircleOutline className="iconcrearexperiencia" /></Link>)}</h3>
-      <Button onClick={handleLogout} className="btn btn-secondary">
-        Cerrar Sesión
-      </Button>
       <hr />
       <div className="contenedorexperiencia">
         <div>
@@ -74,24 +67,21 @@ const Experiencia = () => {
           <Card  className="CardE"   key={experiencia.id_Experiencia}  style={{ width: "80rem" }}>
             <Card.Body>
               <Card.Img  variant="top"  src=""  style={{ width: "50px", height: "50px" }}/>
+              <br />
               <Card.Title className="text-white">
-                <h3> {experiencia.id_Experiencia} - {experiencia.Cargo} </h3>
+                {experiencia.id_Experiencia} - {experiencia.Cargo} 
               </Card.Title>
-              <Card.Subtitle className="mb-2 text-center text-white">
-                <h3>{experiencia.Empresa}</h3>
+              <Card.Subtitle className="mb-2 text-center text-white" >
+                {experiencia.Empresa}
               </Card.Subtitle>
-              <Card.Text className="text-white">
-                <h3>
-                  Año Inicio: {experiencia.AñoInicio} – {experiencia.AñoFinal} -
-                  ({experiencia.EstadoActual})
-                </h3>
+              <Card.Text className="text-white"> Año Inicio: {experiencia.AñoInicio} – {experiencia.AñoFinal} - ({experiencia.EstadoActual})
               </Card.Text>{/*Ternario para mostrar el boton de eliminar y editar solo cuando sea usuario admin*/}
               {token && userRole === "admin" && (<><Link to={`/experiencias/edit/${experiencia.id_Experiencia}`} className="btn btn-warning" >
                     <FaEdit className="iconcrearexperiencia" /> </Link>
                   <Button  onClick={() => handleClick(experiencia.id_Experiencia)} className="btn btn-danger" ><MdDelete className="iconcrearexperiencia" />
                   </Button>
                 </>)}
-            </Card.Body>
+            </Card.Body>22
           </Card>
         ))}</Row>
       </div>

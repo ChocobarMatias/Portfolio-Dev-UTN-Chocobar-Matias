@@ -1,9 +1,58 @@
 .redes {
     font-size: 300%;
     margin-right: 5%;
-}
-.contenedorfooter{
-    display: flex; /*Convertimos al menú en flexbox*/
-    justify-content: space-between; /*Con esto le indicamos que margine todos los items que se encuentra adentro hacia la derecha e izquierda*/
+  }
+  
+  /* Contenedor de footer */
+  .contenedorfooter {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-}
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas más pequeñas */
+    padding: 0 1em; /* Añade un poco de espacio interior */
+  }
+  
+  /* Media Queries para diferentes tamaños de pantalla */
+  
+  /* Pantallas grandes (desktops y laptops) */
+  @media (min-width: 1024px) {
+    .redes {
+      font-size: 300%;
+      margin-right: 5%;
+    }
+  }
+  
+  /* Pantallas medianas (tabletas y pantallas de laptops más pequeñas) */
+  @media (max-width: 1024px) {
+    .redes {
+      font-size: 200%;
+      margin-right: 2%;
+    }
+  }
+  
+  /* Pantallas pequeñas (celulares) */
+  @media (max-width: 768px) {
+    .redes {
+      font-size: 150%;
+      margin-right: 1%;
+    }
+  
+    .contenedorfooter {
+      flex-direction: column; /* Apila los elementos verticalmente */
+      align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+      text-align: center; /* Centra el texto dentro de cada elemento */
+    }
+  }
+  
+  /* Pantallas muy pequeñas (celulares en modo vertical) */
+  @media (max-width: 480px) {
+    .redes {
+      font-size: 120%;
+      margin-right: 0;
+    }
+  
+    .contenedorfooter {
+      padding: 0 0.5em; /* Reduce el padding en pantallas muy pequeñas */
+    }
+  }
+  

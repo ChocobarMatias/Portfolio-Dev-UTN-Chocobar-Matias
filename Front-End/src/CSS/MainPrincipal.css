@@ -1,29 +1,27 @@
-.container {
-  display: flex;
-  justify-content: center;
-}
-
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Añadir box-sizing para manejar el padding y border */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
 }
 
 img {
-  display: flex;
-  justify-content: center;
-  height: 200%;
+  display: block; /* Cambiar display a block para imágenes */
+  height: auto; /* Ajustar la altura automáticamente */
   width: 100%;
   transition: 0.5s;
   object-fit: cover;
   box-shadow: 0 0 20px rgb(250, 160, 108);
-  flex-direction: column;
-  align-items: center;
   backdrop-filter: blur(50px);
   background-color: #c3f02f30;
   border: 3px solid rgba(255, 255, 255, 0.23);
   border-radius: 30px;
   padding: 3px;
-  box-shadow: 0 0 20px rgb(220, 100, 30);
 }
 
 img:hover {
@@ -39,30 +37,70 @@ img:hover {
   width: 100%;
   height: auto;
 }
-.imagenCertificado{
-  width:100%;
-  height: 370px;
+
+.imagenCertificado,
+.imagenFormacion,
+.imagenSkill,
+.imagenExperiencia {
+  width: 100%;
+  height: auto;
 }
 
-.imagenFormacion{
-  width:100%;
-  height: 370px;
-}
-.imagenSkill{
-  width:100%;
-  height: 370px;
-}
-.imagenExperiencia{
-  width:100%;
-  height: 370px;
-}
 .contenedormain {
-  margin-left: 0;
+  margin: 0 auto;
   padding: 20px;
 }
 
-@media (min-width: 576px) {
+/* Media Queries */
+
+/* Small devices (tablets, 600px and up) */
+@media (min-width: 600px) {
   .contenedormain {
-    margin-left: auto;
+    padding: 30px;
+  }
+  .imagenCertificado,
+  .imagenFormacion,
+  .imagenSkill,
+  .imagenExperiencia {
+    height: 300px; /* Ajustar altura para tablets */
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+  .contenedormain {
+    padding: 40px;
+  }
+  .imagenCertificado,
+  .imagenFormacion,
+  .imagenSkill,
+  .imagenExperiencia {
+    height: 350px; /* Ajustar altura para dispositivos de tamaño mediano */
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  .contenedormain {
+    padding: 50px;
+  }
+  .imagenCertificado,
+  .imagenFormacion,
+  .imagenSkill,
+  .imagenExperiencia {
+    height: 370px; /* Ajustar altura para laptops/desktops */
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .contenedormain {
+    padding: 60px;
+  }
+  .imagenCertificado,
+  .imagenFormacion,
+  .imagenSkill,
+  .imagenExperiencia {
+    height: 400px; /* Ajustar altura para pantallas grandes */
   }
 }

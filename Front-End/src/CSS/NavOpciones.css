@@ -1,4 +1,4 @@
-.fotoNavbar{
+.fotoNavbar {
     width: 130px;
     height: 130px;
     overflow: hidden;
@@ -6,21 +6,59 @@
     border-radius: 150px;
     object-fit: cover;
     border: 3px solid rgba(206, 28, 28, 0.23);
-    }
-    .navOpciones{
+}
+
+.navOpciones {
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     backdrop-filter: blur(10px);
     background-color: #c3f02f30;
     border: 3px solid rgba(255, 255, 255, 0.23);
-    border-radius:30px;
+    border-radius: 30px;
     padding: 5px;
     box-shadow: 0 0 20px rgb(220, 100, 30);
     background-image: url("../assets/fondo10.gif");
-    
+    transition: transform 0.3s ease;
+}
+
+.navOpciones:hover {
+    transform: scale(1.08);
+    border-color: #646cff;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .fotoNavbar {
+        width: 100px;
+        height: 100px;
     }
-    .navOpciones:hover{
-        transform: scale(1.08);
-        border-color: #646cff;
+
+    .navOpciones {
+        flex-direction: column;
+        padding: 10px;
     }
+}
+
+@media (max-width: 768px) {
+    .fotoNavbar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .navOpciones {
+        flex-direction: column;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fotoNavbar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .navOpciones {
+        flex-direction: column;
+        padding: 20px;
+    }
+}

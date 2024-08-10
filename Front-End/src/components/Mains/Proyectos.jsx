@@ -21,7 +21,7 @@ const Proyectos = () => {
   // _______________________________________________________________________
   const token = useAuthStore((state) => state.token);
   const userRole = useAuthStore((state) => state.userRole);
-  const clearAuth = useAuthStore((state) => state.clearAuth);
+
  // _______________________________________________________________________
 
 
@@ -52,10 +52,6 @@ const Proyectos = () => {
     getProyectos();
   }, []);
 
-  const handleLogout = () => {
-    clearAuth();
-  };
-
   const totalPages = Math.ceil(proyectos.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -72,9 +68,6 @@ const Proyectos = () => {
           </Link>
         )}
       </h3>
-      <Button onClick={handleLogout} className="btn btn-secondary">
-        Cerrar Sesión
-      </Button>
       <hr />
       <div className="contenedorProyecto">
         {currentItems.map((proyecto) => (

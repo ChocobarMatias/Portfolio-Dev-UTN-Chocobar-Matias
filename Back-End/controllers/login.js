@@ -22,7 +22,7 @@ const login = (req, res) => {
         if (results.length > 0) {
             const user = results[0];
             if (userName === user.userName && Contraseña === user.Contraseña) {
-                const token = jwt.sign({ id: user.id_Usuario, role: user.Rol }, process.env.SECRETKEY, { expiresIn: '1h' });
+                const token = jwt.sign({ id: user.id_Usuario, role: user.Rol }, process.env.SECRETKEY, { expiresIn: '1h' }, {notBefore: '2s'});
                 return res.json({ token });
             } else {
                 return res.status(401).json({ message: 'Usuario o contraseña incorrectos 1°' });

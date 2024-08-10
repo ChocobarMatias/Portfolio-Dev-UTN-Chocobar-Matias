@@ -20,7 +20,7 @@ const [idiomas, setIdiomas] = useState([]);
   // _______________________________________________________________________
   const token = useAuthStore((state) => state.token);
   const userRole = useAuthStore((state) => state.userRole);
-  const clearAuth = useAuthStore((state) => state.clearAuth);
+
   // _______________________________________________________________________
 
 
@@ -45,10 +45,6 @@ try {
   console.log(error)
 }}
 useEffect(()=>{getIdioma()},[])
-// funcion para que si no es admin y no se genero token no muestre 
-const handleLogout = () => {
-  clearAuth();
-};
 
   return (
     <div>
@@ -59,14 +55,11 @@ const handleLogout = () => {
       <div className="idioma">               {/*Ternario para mostrar el boton de crear solo cuando sea usuario admin*/}
       <h3 className=" text-white text-center">IDIOMAS :{token && userRole === "admin" && (<Link to={CREAR_IDIOMA}>
       <IoMdAddCircleOutline className="iconidioma"/></Link>)}</h3>
-      <Button onClick={handleLogout} className="btn btn-secondary">
-        Cerrar Sesión
-      </Button>
       </div>
       <hr />
       <div className="contenedorIdioma text-white">
           <Row>
-      {idiomas.map(idioma =><Card className="CardIdioma text-white" key={idioma.id} style={{ width: '80rem' }} >
+      {idiomas.map(idioma =><Card className="CardIdioma text-white" key={idioma.id_Idioma} style={{ width: '80rem' }} >
           <Card.Body >
             <Row>
               <Col>

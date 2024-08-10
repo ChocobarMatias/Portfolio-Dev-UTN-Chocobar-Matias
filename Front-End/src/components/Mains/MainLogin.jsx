@@ -22,10 +22,6 @@ const MainLogin = () => {
       const decodedToken = JSON.parse(atob(response.data.token.split('.')[1]));
       setUserRole(decodedToken.role);
 
-      // const { token, userRole } = response.data;
-      // setToken(token);
-      // setUserRole(userRole);
-
       navigate(HOME);
     } catch (error) {
       console.error('Login incorrecto:', error);

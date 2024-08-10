@@ -19,7 +19,7 @@ const MainPrincipal = () => {
             <Col xs={12} sm={6} md={4} className="mb-4">
               <div className="formaciionMain">
                 <h2 className="form text-white">Formacion</h2>
-                <Link to={FORMACION}>
+                <Link to={FORMACION} className="linkformacion">
                   <img className="imagenFormacion" src={formacion} alt="" />
                 </Link>
               </div>

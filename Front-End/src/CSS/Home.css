@@ -1,10 +1,10 @@
 /* Estilos globales para la página Home */
-body {
+/* body {
     margin: 0;
     font-family: Arial, sans-serif;
-  }
+  } */
   
-  .container {
+  /* .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -17,7 +17,7 @@ body {
   img {
     max-width: 100%;
     height: auto;
-  }
+  } */
   
   /* Ajustes responsivos */
   @media (max-width: 768px) {

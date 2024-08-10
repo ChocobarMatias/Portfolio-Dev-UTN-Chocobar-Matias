@@ -1,21 +1,37 @@
 import { memo } from "react";
 import FOTO from "../../Img/FOTO.jpg";
+import {Button} from 'react-bootstrap';
 import "../../CSS/Header.css";
 import { LOGIN } from "../../Routes/routes";
 import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
+import useAuthStore from "../Layouts/stores/useAuthStore";
 
 const Header = memo(function Header() {
   // utilizo menos para que el componente se muestre una sola vez y no se este rereenderizando
 
+   // esto es necesario para generar el token y ver usuarios admin tengan previlegios
+  // _______________________________________________________________________
+  const token = useAuthStore((state) => state.token);
+  const userRole = useAuthStore((state) => state.userRole);
+  const clearAuth = useAuthStore((state) => state.clearAuth);
+  // _______________________________________________________________________
+
+  // funcion para que si no es admin y no se genero token no muestre 
+const handleLogout = () => {
+  clearAuth();
+};
+
   return (
     <div >
-      <br /><br />
+      <div className="boton">
+      {token !== null && userRole==="admin" ? <Button onClick={handleLogout} className="btn btn-secondary">
+      Cerrar Sesión</Button> : <Link to={LOGIN} className="login text-white btn-warning"><RxAvatar className="btnlogin"/></Link>}
+      </div>
 
-      
           <div className="header">
-          <Link to={LOGIN} className="login text-white btn-warning"><RxAvatar className="btnlogin"/></Link>
-            <img src={FOTO} className="fotoperfil" width={"100%"}/>
+       
+            <img src={FOTO}  className="fotoperfil" width={"100%"}/>
             <h1 className="text-white">Chocobar Matias Sebastian</h1>
             <br />
             <h3 className="text-white">Programador Universitario - UTN</h3>

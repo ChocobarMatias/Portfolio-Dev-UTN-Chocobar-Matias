@@ -20,7 +20,7 @@ const [formaciones, setFormaciones] = useState([]);
 // _______________________________________________________________________
 const token = useAuthStore((state) => state.token);
 const userRole = useAuthStore((state) => state.userRole);
-const clearAuth = useAuthStore((state) => state.clearAuth);
+
 // _______________________________________________________________________
  
   const getFormaciones = async () =>{
@@ -45,10 +45,7 @@ try {
 console.log(error);}}
 
 useEffect(()=>{getFormaciones()},[]);
-// funcion para que si no es admin y no se genero token no muestre 
-const handleLogout = () => {
-  clearAuth();
-};
+
 
   return (
     <div>
@@ -63,9 +60,6 @@ const handleLogout = () => {
       <div>
       <h3 className="formacion text-white">FORMACION :{token && userRole === "admin" && (<Link to={CREAR_FORMACION}>
       <IoMdAddCircleOutline className="botoncrearfor"/></Link>)}</h3>
-      <Button onClick={handleLogout} className="btn btn-secondary">
-        Cerrar Sesión
-      </Button>
       </div>
       <br />
       <br />
@@ -81,11 +75,11 @@ const handleLogout = () => {
             <Card.Img variant="top" src={formacion.Logo} style={{ width: "150px", height: "150px" }} />
             </Col>
             <Col md={9}>
-            <Card.Title><h2>{formacion.id_Formacion} - {formacion.Titulo}</h2></Card.Title>
-            <Card.Subtitle className="mb-2 text-center"><h3>{formacion.InstitucionEducativa}</h3></Card.Subtitle>
+            <Card.Title>{formacion.id_Formacion} - {formacion.Titulo}</Card.Title>
+            <Card.Subtitle className="mb-2 text-center">{formacion.InstitucionEducativa}</Card.Subtitle>
             <Card.Text>
-            <h3>Año Inicio : {formacion.AñoInicio} – Año Finalizacion : {formacion.AñoFinEstimado} </h3></Card.Text>
-            <Card.Text><h3>(Estado : {formacion.Estado})</h3></Card.Text>
+            Año Inicio : {formacion.AñoInicio} – Año Finalizacion : {formacion.AñoFinEstimado}</Card.Text>
+            <Card.Text>(Estado : {formacion.Estado})</Card.Text>
             </Col>
             <Col md={1}>
             {token && userRole === "admin" && (<><Link to={`/formaciones/edit/${formacion.id_Formacion}`} className="btn btn-warning" ><FaEdit className="boto2for"/></Link> 

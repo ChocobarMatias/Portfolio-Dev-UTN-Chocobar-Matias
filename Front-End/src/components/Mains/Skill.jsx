@@ -19,7 +19,7 @@ const [skills, setSkills] = useState([]);
   // _______________________________________________________________________
   const token = useAuthStore((state) => state.token);
   const userRole = useAuthStore((state) => state.userRole);
-  const clearAuth = useAuthStore((state) => state.clearAuth);
+
   // _______________________________________________________________________
 
 const getSkill = async()=>{
@@ -42,19 +42,14 @@ if (response) {
   console.log(error)
 }}
 useEffect(()=>{getSkill()},[])
-// funcion para que si no es admin y no se genero token no muestre 
-const handleLogout = () => {
-  clearAuth();
-};
+
+
   return (
     <div>
       <br /><br />
       <NavOpciones/><br />
   <h3 className="text-white">SKILL :{token && userRole === "admin" && (<Link to = {CREAR_SKILL}>
   <IoMdAddCircleOutline className="btnCrear text-white"/></Link>)}</h3>
-  <Button onClick={handleLogout} className="btn btn-secondary">
-        Cerrar Sesión
-      </Button>
   <hr />
   
     <div className="containerSkill">
@@ -66,6 +61,7 @@ const handleLogout = () => {
   <Col md={18}>
   
   <Card.Img variant="top" src={skill.LogoSkill} style={{ width: "150px", height: "150px" }} />
+  <br />
   <Card.Title><h2>{skill.id_Skill} - {skill.NombreSkill}</h2></Card.Title>
   </Col>
 

@@ -1,6 +1,5 @@
-/* crear skill */
-
-.crearskill{
+/* Crear skill */
+.crearskill {
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
@@ -12,14 +11,16 @@
     padding: 20px;
     box-shadow: 0 0 20px rgb(220, 100, 30);
 }
-.botones{
+
+/* Botones */
+.botones {
     display: flex; 
     justify-content: space-between; 
     align-items: center;
 }
 
-/* actualizar skill */
-.actualizarskill{
+/* Actualizar skill */
+.actualizarskill {
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
@@ -32,38 +33,64 @@
     box-shadow: 0 0 20px rgb(220, 100, 30);
 }
 
-
-.CardSkill{
+/* Card Skill */
+.CardSkill {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-left: 9px;
-    margin-left: 8%;
-    margin-right: 8%;
-    /* backdrop-filter: blur(10px); */
-    color: #ffff;
+    margin: 0 auto;
+    max-width: 80%; /* Cambié el ancho máximo para mejor adaptabilidad */
     background-color: #c3f02f30;
     border: 3px solid rgba(255, 255, 255, 0.23);
-    border-radius:30px;
-    padding: 2px;
+    border-radius: 30px;
+    padding: 10px; /* Ajusté el padding para mejor visualización en pantallas pequeñas */
     box-shadow: 0 0 20px rgb(220, 100, 30);
 }
 
-.btnskillcrea{
-    font-size: 100%;
+/* Botones */
+.btnskillcrea, .btnskillact, .btnCrear, .btnskill {
     margin-right: 2%;
+    font-size: 100%; /* Tamaño de fuente base */
 }
-.btnskillact{
-    font-size: 100%;
-    margin-right: 2%;
+
+/* Botones grandes */
+.btnCrear, .btnskill {
+    font-size: 200%; /* Tamaño grande para botones importantes */
 }
-.btnCrear{
-    font-size: 200%;
-    margin-right: 2%;
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .crearskill, .actualizarskill, .CardSkill {
+        max-width: 90%;
+        padding: 15px; /* Reduce el padding en pantallas más pequeñas */
+    }
+    
+    .btnskillcrea, .btnskillact, .btnCrear, .btnskill {
+        font-size: 90%; /* Ajuste de tamaño de fuente en pantallas más pequeñas */
+    }
 }
-.btnskill{
-    font-size: 200%;
-    margin-right: 2%;
+
+@media (max-width: 768px) {
+    .crearskill, .actualizarskill, .CardSkill {
+        max-width: 100%;
+        padding: 10px; /* Menos padding en pantallas aún más pequeñas */
+    }
+    
+    .btnskillcrea, .btnskillact, .btnCrear, .btnskill {
+        font-size: 80%; /* Ajusta más el tamaño de fuente */
+    }
+}
+
+@media (max-width: 480px) {
+    .crearskill, .actualizarskill, .CardSkill {
+        max-width: 100%;
+        padding: 5px; /* Muy poco padding en pantallas muy pequeñas */
+    }
+    
+    .btnskillcrea, .btnskillact, .btnCrear, .btnskill {
+        font-size: 70%; /* Tamaño de fuente más pequeño para pantallas muy pequeñas */
+        margin-right: 0; /* Elimina el margen en pantallas pequeñas */
+    }
 }

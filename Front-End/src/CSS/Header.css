@@ -1,30 +1,74 @@
-.fotoperfil{
-width: 300px;
-height: 300px;
-overflow: hidden;
-margin: 100px;
-border-radius: 150px;
-object-fit: cover;
-border: 3px solid rgba(206, 28, 28, 0.23);
-}
-.header{
+.fotoperfil {
+    width: 150px; /* Tamaño base más pequeño para pantallas pequeñas */
+    height: 150px;
+    overflow: hidden;
+    margin: 20px auto; /* Centrado automático */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(206, 28, 28, 0.23);
+  }
+  .boton{
+    display: flex;
+    justify-content: end;
+  }
+  .header {
     width: 90%;
-    height: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
     backdrop-filter: blur(10px);
     background-color: #c3f02f30;
     border: 10px solid rgba(255, 255, 255, 0.23);
-    border-radius:50px;
-    padding: 1%;
-    margin-left: 5%;
+    border-radius: 50px;
+    padding: 2%;
+    margin: 0 auto; /* Centrado automático */
     box-shadow: 0 0 20px rgb(220, 100, 30);
     background-image: url("../assets/fondo7.gif");
+    background-size: cover; /* Asegura que la imagen de fondo cubra todo el contenedor */
+  }
+  
+  .btnlogin {
+    width: 80px; /* Tamaño base más pequeño para pantallas pequeñas */
+    height: 80px;
+    margin: 10px; /* Ajuste de margen */
+    display: block; /* Hace que el botón sea un bloque */
+    margin-left: auto; /* Centrado automático horizontal */
+    margin-right: auto; /* Centrado automático horizontal */
+  }
+  
+  /* Media Queries */
+  @media (min-width: 768px) {
+    .fotoperfil {
+      width: 200px;
+      height: 200px;
+    }
     
-}
-.btnlogin{
-width: 100px;
-height: 100px;
-margin-left: 400%;
-}
+    .header {
+      width: 80%;
+      padding: 2%;
+    }
+  
+    .btnlogin {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .fotoperfil {
+      width: 300px;
+      height: 300px;
+      margin: 50px; /* Ajuste de margen para pantallas más grandes */
+    }
+  
+    .header {
+      width: 70%;
+      padding: 2%;
+    }
+  
+    .btnlogin {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
