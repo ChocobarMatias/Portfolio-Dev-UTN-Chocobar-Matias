@@ -58,3 +58,6 @@ export const URL_USUARIOS_ELIMINAR = "http://localhost:8000/usuarios/delete/"
 
 // Login
 export const URL_LOGIN = "http://localhost:8000/login"
+
+// Recuperar contraseña
+export const URL_RECUPERAR = "http://localhost:8000/recuperar"

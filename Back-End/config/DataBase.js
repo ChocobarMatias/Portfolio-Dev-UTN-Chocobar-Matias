@@ -4,12 +4,21 @@ const dotenv = require("dotenv")
 
 dotenv.config()
 
-//conexion a mysql
-const connection = mysql.createConnection({
+const configConnection = process.env.DATABASE_URL 
+? { uri: process.env.DATABASE_URL } 
+: {
     host     : process.env.HOST,
     user     : process.env.USER,
     password : process.env.PASSWORD,
-    database : process.env.DATABASE
-})
+    database : process.env.DATABASE,
+}
+
+//conexion a mysql
+const connection = mysql.createConnection(configConnection.uri || configConnection
+    // host     : process.env.HOST,
+    // user     : process.env.USER,
+    // password : process.env.PASSWORD,
+    // database : process.env.DATABASE,
+)
 
 module.exports = {connection}

@@ -2,11 +2,11 @@ import { memo } from "react";
 import FOTO from "../../Img/FOTO.jpg";
 import {Button} from 'react-bootstrap';
 import "../../CSS/Header.css";
-import { LOGIN } from "../../Routes/routes";
+import { HOME, LOGIN } from "../../Routes/routes";
 import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 import useAuthStore from "../Layouts/stores/useAuthStore";
-
+import { FaHome } from "react-icons/fa";
 const Header = memo(function Header() {
   // utilizo menos para que el componente se muestre una sola vez y no se este rereenderizando
 
@@ -25,8 +25,8 @@ const handleLogout = () => {
   return (
     <div >
       <div className="boton">
-      {token !== null && userRole==="admin" ? <Button onClick={handleLogout} className="btn btn-secondary">
-      Cerrar Sesión</Button> : <Link to={LOGIN} className="login text-white btn-warning"><RxAvatar className="btnlogin"/></Link>}
+      {token !== null && userRole==="admin" ?  <div><h3>Bienvenido Matias</h3><Button onClick={handleLogout} className="btn btn-secondary">
+      Cerrar Sesión</Button></div> : <Link to={LOGIN} className="login text-white btn-warning"><RxAvatar className="btnlogin"/></Link>}
       </div>
 
           <div className="header">
@@ -61,6 +61,7 @@ const handleLogout = () => {
             </h2>
             <br />
             <br />
+            <Link to={HOME}><FaHome className="FaHome" /></Link>
           </div>
         
         <div className="glass"></div>

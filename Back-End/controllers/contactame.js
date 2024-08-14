@@ -33,8 +33,11 @@ const createContacts =(req,res)=>{
         subject: `Mi Porfolio - Nuevo mensaje de ${Nombre}`,
         text: `
             Nombre: ${Nombre}
+
             Email: ${Email}
+
             Motivo: ${Motivo}
+            
             Comentario: ${Comentario}
         `
     };
@@ -45,7 +48,7 @@ const createContacts =(req,res)=>{
             console.log(error);
             return;
         }
-        res.status(200).send('Mensaje Enviado correctamente');
+        res.status(200).json({message:'Mensaje Enviado correctamente'});
     }); 
         
 });

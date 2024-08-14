@@ -1,10 +1,10 @@
 const { connection } = require("../config/DataBase");
 const jwt = require("jsonwebtoken");
+const {mailRecuperar} = require("../config/Recuperar")
+const dotenv = require("dotenv")
 
-
-
-// const jwt = require("jsonwebtoken");
-require("dotenv").config(); // Asegúrate de tener esto para cargar las variables de entorno
+dotenv.config()
+// require("dotenv").config(); // Asegúrate de tener esto para cargar las variables de entorno
 
 const secretKey = process.env.SECRETKEY; 
 
@@ -59,6 +59,50 @@ const verifyToken = (req, res, next) => {
     });
 };
 
+const recuperar = (req, res) => {
+    const { userName, Email } = req.body;
+    const query = 'SELECT * FROM Usuarios WHERE userName = ?';
+
+    connection.query(query, [userName], (err, results) => {
+        if (err) {
+            console.error('Error al consultar la base de datos:', err);
+            return res.status(500).json({ message: 'Error del servidor' });
+        }
+
+        if (results.length > 0) {
+            const user = results[0];
+            if (userName === user.userName && Email === user.Email) {
+
+                const mailOptions = {
+                    from: process.env.FROM,
+                    to: Email,
+                    subject: `Mi Portfolio - Recuperar Contraseña de ${user.userName}`,
+                    text: `
+                        Mail para recuperar la contraseña de mi portfolio
+
+                        Usuario: ${user.userName}
+
+                        Email: ${user.Email}
+
+                        Contraseña: ${user.Contraseña}.
+                    `
+                };
+
+                mailRecuperar.sendMail(mailOptions, (error, info) => {
+                    if (error) {
+                        console.error('Error al enviar el correo:', error);
+                        return res.status(500).send('Error al enviar el correo');
+                    }
+                    res.status(200).json({message:'Mensaje enviado correctamente'});
+                }); 
+            } else {
+                return res.status(401).json({ message: 'Usuario o email incorrectos' });
+            }
+        } else {
+            return res.status(401).json({ message: 'Usuario o email incorrectos' });
+        }
+    });
+};
 
 
-module.exports = { login,verifyToken };
+module.exports = { login,verifyToken,recuperar };

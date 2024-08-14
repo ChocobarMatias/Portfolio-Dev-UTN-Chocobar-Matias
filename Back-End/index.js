@@ -10,10 +10,13 @@ const skills = require("./routes/skills");
 const usuarios = require("./routes/usuarios");
 const login = require("./routes/login");
 const cors = require("cors");
-const bodyParser = require('body-parser'); // elemento para que me lleguen los correos
+const bodyParser = require('body-parser'); 
+const dotenv = require("dotenv")
+
+dotenv.config()// elemento para que me lleguen los correos
 
 const app = express();
-const port = 8000;
+const port = process.env.PORT;
 
 app.use(bodyParser.json()); // elemento para que me lleguen los correos
 

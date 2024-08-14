@@ -10,6 +10,8 @@ import "../../CSS/MainPrincipal.css";
 import { CERTIFICADO, EXPERIENCIA, FORMACION, IDIOMA, PROYECTO, SKILL } from "../../Routes/routes";
 
 const MainPrincipal = () => {
+
+  
   return (
     <div className="mainPrincipal">
       <br /><br />

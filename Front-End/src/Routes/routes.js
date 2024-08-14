@@ -1,5 +1,6 @@
 export const HOME ="/home"
 export const LOGIN ="/Login"
+export const RECUPERAR ="/Recuperar"
 export const ERROR ="*"
 export const CERTIFICADO = "/certificados"
 export const CONTACTAME = "/contactame"

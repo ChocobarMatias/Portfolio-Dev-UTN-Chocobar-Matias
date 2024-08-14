@@ -25,8 +25,8 @@ const handleLogout = () => {
   return (
     <>
     <div className="boton">
-    {token !== null && userRole==="admin" ? <Button onClick={handleLogout} className="btn btn-secondary">
-        Cerrar Sesión</Button> : <Link to={LOGIN} className="login text-white btn-warning"><RxAvatar className="btnlogin"/></Link>}
+    {token !== null && userRole==="admin" ? <div><h3>Bienvenido Matias</h3><Button onClick={handleLogout} className="btn btn-secondary">
+        Cerrar Sesión</Button></div> : <Link to={LOGIN} className="login text-white btn-warning"><RxAvatar className="btnlogin"/></Link>}
         </div>
       <br /><br /><br />
       <Navbar bg="primary" data-bs-theme="dark" className='navOpciones'>

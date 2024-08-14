@@ -2,7 +2,8 @@ import Header from '../components/Layouts/Header'
 import MainPrincipal from '../components/Mains/MainPrincipal'
 import Footer from '../components/Layouts/Footer'
 import Contactame from '../components/Mains/Contactame'
-// import "../CSS/Home.css"
+import MostrarContactame from '../components/MostrarContactame'
+
 
 const Home = () => {
   
@@ -11,6 +12,7 @@ const Home = () => {
      <Header />
      <MainPrincipal />
      <Contactame/>
+     <MostrarContactame/>
      <Footer />
     </>
   )

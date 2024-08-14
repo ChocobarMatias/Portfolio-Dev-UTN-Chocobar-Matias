@@ -74,7 +74,7 @@ const Experiencia = () => {
               <Card.Subtitle className="mb-2 text-center text-white" >
                 {experiencia.Empresa}
               </Card.Subtitle>
-              <Card.Text className="text-white"> Año Inicio: {experiencia.AñoInicio} – {experiencia.AñoFinal} - ({experiencia.EstadoActual})
+              <Card.Text className="text-white" style={{ fontSize:"15px" }}> Año Inicio: {experiencia.AñoInicio} – {experiencia.AñoFinal} - ({experiencia.EstadoActual})
               </Card.Text>{/*Ternario para mostrar el boton de eliminar y editar solo cuando sea usuario admin*/}
               {token && userRole === "admin" && (<><Link to={`/experiencias/edit/${experiencia.id_Experiencia}`} className="btn btn-warning" >
                     <FaEdit className="iconcrearexperiencia" /> </Link>

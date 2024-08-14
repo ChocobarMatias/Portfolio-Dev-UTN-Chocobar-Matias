@@ -1,9 +1,11 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {HOME, LOGIN, ERROR,CERTIFICADO, EXPERIENCIA, FORMACION, IDIOMA, PROYECTO, SKILL,CREAR_FORMACION, EDITAR_FORMACION, CREAR_EXPERIENCIA, EDITAR_EXPERIENCIA, CREAR_IDIOMA, EDITAR_IDIOMA, CREAR_SKILL, EDITAR_SKILL,
-  CREAR_CERTIFICADO, EDITAR_CERTIFICADO, CREAR_PROYECTO, EDITAR_PROYECTO} from "./Routes/routes";
+  CREAR_CERTIFICADO, EDITAR_CERTIFICADO, CREAR_PROYECTO, EDITAR_PROYECTO,
+  RECUPERAR} from "./Routes/routes";
 import './App.css';
 import Login from "./pages/Login";
+import MainRecuperar from "./components/Mains/MainRecuperar"
 import Home from "./pages/Home";
 import Error from "./components/Mains/Error";
 import CrearFormacion from "./pages/Formaciones/CrearFormacion";
@@ -36,6 +38,7 @@ const roleRequired = "admin"
         <Routes>
           {/* Rutas públicas en estas rutas pueden ingresar usuario comun sin problema es lo que pueden ver y hacer*/}
           <Route path={LOGIN} element={<Login />} />
+          <Route path={RECUPERAR} element={<MainRecuperar />} />
           <Route path="/" index element={<Home/>} />
           <Route path={HOME} element={<Home />} />
           <Route path={FORMACION} element={<HomeFormacion />} />
