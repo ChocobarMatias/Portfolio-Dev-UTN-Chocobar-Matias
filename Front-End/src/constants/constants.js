@@ -9,7 +9,7 @@ export const URL_ADMINISTRADORES_EDITAR = "http://localhost:8000/administradores
 export const URL_ADMINISTRADORES_ELIMINAR = "http://localhost:8000/administradores/delete/"
 
 //Certificaciones
-export const URL_CERTIFICACIONES = "http://localhost:8000/certificados/"
+export const URL_CERTIFICACIONES = "http://localhost:3306/certificados/"
 export const URL_CERTIFICACIONES_CREAR = "http://localhost:8000/certificados/create/"
 export const URL_CERTIFICACIONES_EDITAR = "http://localhost:8000/certificados/edit/"
 export const URL_CERTIFICACIONES_ELIMINAR = "http://localhost:8000/certificados/delete/"
