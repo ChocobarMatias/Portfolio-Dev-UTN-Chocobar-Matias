@@ -16,7 +16,7 @@ const dotenv = require("dotenv")
 dotenv.config()// elemento para que me lleguen los correos
 
 const app = express();
-const port = process.env.PORT;
+const port = 8000;
 
 app.use(bodyParser.json()); // elemento para que me lleguen los correos
 
