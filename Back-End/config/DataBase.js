@@ -4,21 +4,40 @@ const dotenv = require("dotenv")
 
 dotenv.config()
 
-const configConnection = process.env.DATABASE_URL 
-? { uri: process.env.DATABASE_URL } 
-: {
-    host     : process.env.HOST,
-    user     : process.env.USER,
-    password : process.env.PASSWORD,
-    database : process.env.DATABASE,
-}
+// const connection = mysql.createConnection({
+//     host: process.env.HOST,
+//     user: process.env.USER,
+//     pass: process.env.PASSWORD,
+//     database: process.env.DATABASE,
+//     waitForConnections: true,
+//     connectionLimit: 4,
+//    queueLimit: 0
+// })
+
+const connection = mysql.createConnection({
+    host: process.env.HOST_2,
+    user: process.env.USER_2,
+    pass: process.env.PASSWORD_2,
+    database: process.env.DATABASE_2,
+    waitForConnections: true,
+    connectionLimit: 4,
+   queueLimit: 0
+})
+// const configConnection = process.env.DATABASE_URL 
+
+// : {
+//     host     : process.env.HOST,
+//     user     : process.env.USER,
+//     password : process.env.PASSWORD,
+//     database : process.env.DATABASE,
+// }
 
 //conexion a mysql
-const connection = mysql.createConnection(configConnection.uri || configConnection
+// const connection = mysql.createConnection(configConnection.uri || configConnection
     // host     : process.env.HOST,
     // user     : process.env.USER,
     // password : process.env.PASSWORD,
     // database : process.env.DATABASE,
-)
+
 
 module.exports = {connection}
