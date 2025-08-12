@@ -4,6 +4,23 @@
   box-sizing: border-box; /* Añadir box-sizing para manejar el padding y border */
 }
 
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.mainPrincipal {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  padding-top: 2rem; /* Espaciado superior */
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+}
+
+.contenedormain {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
 .container {
   display: flex;
   justify-content: center;
