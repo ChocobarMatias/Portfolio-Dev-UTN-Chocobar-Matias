@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://portfolio-matias-chocobar.com/sitemap.xml
+
+# Disallow admin routes
+Disallow: /login
+Disallow: /crear-*
+Disallow: /editar-*
+Disallow: /admin
+
+# Allow main sections
+Allow: /home
+Allow: /formacion
+Allow: /experiencia
+Allow: /skills
+Allow: /proyectos
+Allow: /certificados
+Allow: /idiomas
+
+# Crawl delay (optional, in seconds)
+Crawl-delay: 1
